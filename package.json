@@ -1,0 +1,16 @@
+{
+  "name": "echo",
+  "author": "Jeff Preussner",
+  "version": "0.0.1",
+  "description": "This project uses echo v0.0.1",
+  "private": true,
+  "prettier": {},
+  "devDependencies": {
+    "eslint": "^5.16.0"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "forever": "^3.0.4"
+  }
+}
