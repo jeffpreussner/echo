@@ -1,4 +1,5 @@
 const express = require("express");
+const path = require('path');
 
 let port = 4041;
 
@@ -19,7 +20,8 @@ app.all("/", function (req, res) {
   try {
     res.json(JSON.parse(req.query.json));
   } catch (e) {
-    res.json({ error: "JSON not provided." });
+    res.sendFile(path.join(__dirname + '/index.html'));
+
   }
 });
 
