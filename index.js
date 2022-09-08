@@ -15,14 +15,21 @@ const cors = require("cors");
 const app = express();
 
 app.use(cors());
-
+app.use(express.json());
 app.all("/", function (req, res) {
+ 
   try {
     res.json(JSON.parse(req.query.json));
+    return;
   } catch (e) {
     res.sendFile(path.join(__dirname + '/index.html'));
-
+    try {
+      res.json(req.body);
+      return;
+    } catch (e) { 
+      res.send(e);
   }
+}
 });
 
 app.listen(port, () => {
