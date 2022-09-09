@@ -44,3 +44,22 @@ render(
 )
 
 ```
+
+json passed as request body will also be returned
+
+```
+fetch({
+    url: `${MOCK_SERVER}`,
+    options: {
+      method: "POST",
+      body: JSON.stringify(mocks),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    },
+  });
+};
+```
+predefined json can be returned when passed as a path. for example:
+
+`localhost:4041/<extension>/<filename>` will return file located in the `./mockData` directory for example `localhost:4041/json/test` will return `./mockData/test.json`
